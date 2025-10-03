@@ -1,0 +1,127 @@
+[
+  {
+    "id": "bank_001",
+    "name": "中国工商银行",
+    "type": "commercial",
+    "isThirdParty": false,
+    "dailyLimit": 1000000,
+    "currencies": ["CNY", "USD"],
+    "reachableBanks": [
+      {
+        "bankId": "bank_002",
+        "transferFee": {"fixed": 10, "percentage": 0.001},
+        "arrivalFee": {"fixed": 5, "percentage": 0.0005},
+        "expectedDuration": "1-2小时"
+      },
+      {
+        "bankId": "bank_003", 
+        "transferFee": {"fixed": 15, "percentage": 0.002},
+        "arrivalFee": {"fixed": 8, "percentage": 0.001},
+        "expectedDuration": "2-3小时"
+      }
+    ]
+  },
+  {
+    "id": "bank_002",
+    "name": "中国建设银行",
+    "type": "commercial",
+    "isThirdParty": false,
+    "dailyLimit": 800000,
+    "currencies": ["CNY", "USD", "EUR"],
+    "reachableBanks": [
+      {
+        "bankId": "bank_003",
+        "transferFee": {"fixed": 8, "percentage": 0.001},
+        "arrivalFee": {"fixed": 4, "percentage": 0.0005},
+        "expectedDuration": "1-2小时"
+      },
+      {
+        "bankId": "bank_004",
+        "transferFee": {"fixed": 12, "percentage": 0.0015},
+        "arrivalFee": {"fixed": 6, "percentage": 0.0008},
+        "expectedDuration": "3-4小时"
+      }
+    ]
+  },
+  {
+    "id": "bank_003",
+    "name": "中国银行",
+    "type": "commercial", 
+    "isThirdParty": false,
+    "dailyLimit": 1200000,
+    "currencies": ["CNY", "USD", "EUR", "GBP"],
+    "reachableBanks": [
+      {
+        "bankId": "bank_004",
+        "transferFee": {"fixed": 10, "percentage": 0.001},
+        "arrivalFee": {"fixed": 5, "percentage": 0.0005},
+        "expectedDuration": "2-3小时"
+      },
+      {
+        "bankId": "bank_005",
+        "transferFee": {"fixed": 10, "percentage": 0.001},
+        "arrivalFee": {"fixed": 5, "percentage": 0.0005},
+        "expectedDuration": "2-3小时"
+      }
+    ]
+  },
+  {
+    "id": "bank_004",
+    "name": "招商银行",
+    "type": "commercial",
+    "isThirdParty": false,
+    "dailyLimit": 900000,
+    "currencies": ["CNY", "USD"],
+    "reachableBanks": []
+  },
+  {
+    "id": "bank_005",
+    "name": "支付宝",
+    "type": "third_party",
+    "isThirdParty": true,
+    "dailyLimit": 500000,
+    "currencies": ["CNY"],
+    "reachableBanks": [
+      {
+        "bankId": "bank_001",
+        "transferFee": {"fixed": 0, "percentage": 0.001},
+        "arrivalFee": {"fixed": 0, "percentage": 0.0005},
+        "expectedDuration": "实时"
+      },
+      {
+        "bankId": "bank_002",
+        "transferFee": {"fixed": 0, "percentage": 0.001},
+        "arrivalFee": {"fixed": 0, "percentage": 0.0005},
+        "expectedDuration": "实时"
+      },
+      {
+        "bankId": "bank_006",
+        "transferFee": {"fixed": 0, "percentage": 0.001},
+        "arrivalFee": {"fixed": 0, "percentage": 0.0005},
+        "expectedDuration": "实时"
+      }
+    ]
+  },
+  {
+    "id": "bank_006",
+    "name": "微信",
+    "type": "third_party",
+    "isThirdParty": true,
+    "dailyLimit": 500000,
+    "currencies": ["CNY"],
+    "reachableBanks": [
+      {
+        "bankId": "bank_005",
+        "transferFee": {"fixed": 10, "percentage": 0.001},
+        "arrivalFee": {"fixed": 5, "percentage": 0.0005},
+        "expectedDuration": "2-3小时"
+      },
+      {
+        "bankId": "bank_002",
+        "transferFee": {"fixed": 0, "percentage": 0.001},
+        "arrivalFee": {"fixed": 0, "percentage": 0.0005},
+        "expectedDuration": "实时"
+      }
+    ]
+  }
+]

@@ -1,0 +1,250 @@
+[
+  {
+    "id": "ffc8599e-cea2-497c-9d55-bbda4224e1d6",
+    "currency": "CNY",
+    "amount": 100,
+    "fromBankId": "bank_001",
+    "toBankId": "bank_005",
+    "route": [
+      "bank_001",
+      "bank_003",
+      "bank_005"
+    ],
+    "currentStep": 1,
+    "status": "completed",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国银行",
+        "expectedAmount": 76.7,
+        "actualAmount": 76.7,
+        "transferFee": 15.2,
+        "arrivalFee": 8.1,
+        "totalStepFee": 23.299999999999997,
+        "expectedDuration": "2-3小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-03T17:36:07.320Z",
+        "confirmedAt": "2025-10-03T17:36:09.171Z"
+      },
+      {
+        "step": 2,
+        "fromBank": "中国银行",
+        "toBank": "支付宝",
+        "expectedAmount": 61.550000000000004,
+        "actualAmount": 61.550000000000004,
+        "transferFee": 10.1,
+        "arrivalFee": 5.05,
+        "totalStepFee": 15.149999999999999,
+        "expectedDuration": "2-3小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-03T17:36:10.113Z",
+        "confirmedAt": "2025-10-03T17:36:11.126Z"
+      }
+    ],
+    "totalFees": 38.449999999999996,
+    "netAmount": 61.550000000000004,
+    "createdAt": "2025-10-03T17:33:17.108Z",
+    "updatedAt": "2025-10-03T17:36:11.126Z",
+    "cancellationReason": ""
+  },
+  {
+    "id": "b6d83db4-4049-4abe-90f6-c1b73624dac8",
+    "currency": "CNY",
+    "amount": 100,
+    "fromBankId": "bank_001",
+    "toBankId": "bank_005",
+    "route": [
+      "bank_001",
+      "bank_003",
+      "bank_005"
+    ],
+    "currentStep": 1,
+    "status": "completed",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国银行",
+        "expectedAmount": 76.7,
+        "actualAmount": 99,
+        "transferFee": 15.2,
+        "arrivalFee": 8.1,
+        "totalStepFee": 23.299999999999997,
+        "expectedDuration": "2-3小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-03T17:38:50.908Z",
+        "confirmedAt": "2025-10-03T17:38:53.255Z"
+      },
+      {
+        "step": 2,
+        "fromBank": "中国银行",
+        "toBank": "支付宝",
+        "expectedAmount": 83.85,
+        "actualAmount": 50,
+        "transferFee": 10.1,
+        "arrivalFee": 5.05,
+        "totalStepFee": 15.149999999999999,
+        "expectedDuration": "2-3小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-03T17:38:55.438Z",
+        "confirmedAt": "2025-10-03T17:39:01.935Z"
+      }
+    ],
+    "totalFees": 38.449999999999996,
+    "netAmount": 61.550000000000004,
+    "createdAt": "2025-10-03T17:38:47.468Z",
+    "updatedAt": "2025-10-03T17:39:01.935Z",
+    "cancellationReason": ""
+  },
+  {
+    "id": "329d5bf4-f0d1-4314-a2e7-10527a682d11",
+    "currency": "CNY",
+    "amount": 200,
+    "fromBankId": "bank_001",
+    "toBankId": "bank_003",
+    "route": [
+      "bank_001",
+      "bank_003"
+    ],
+    "currentStep": 0,
+    "status": "cancelled",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国银行",
+        "expectedAmount": 176.4,
+        "actualAmount": null,
+        "transferFee": 15.4,
+        "arrivalFee": 8.2,
+        "totalStepFee": 23.6,
+        "expectedDuration": "2-3小时",
+        "status": "sent",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-03T17:39:28.369Z",
+        "confirmedAt": null
+      }
+    ],
+    "totalFees": 23.6,
+    "netAmount": 176.4,
+    "createdAt": "2025-10-03T17:39:25.653Z",
+    "updatedAt": "2025-10-03T17:39:35.559Z",
+    "cancellationReason": "cancel"
+  },
+  {
+    "id": "406f8c7c-b317-4f41-97b7-9ef32e47dc41",
+    "currency": "CNY",
+    "amount": 300,
+    "fromBankId": "bank_001",
+    "toBankId": "bank_003",
+    "route": [
+      "bank_001",
+      "bank_003"
+    ],
+    "currentStep": 0,
+    "status": "completed",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国银行",
+        "expectedAmount": 276.1,
+        "actualAmount": 276.1,
+        "transferFee": 15.6,
+        "arrivalFee": 8.3,
+        "totalStepFee": 23.9,
+        "expectedDuration": "2-3小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-03T17:39:54.028Z",
+        "confirmedAt": "2025-10-03T17:39:55.362Z"
+      }
+    ],
+    "totalFees": 23.9,
+    "netAmount": 276.1,
+    "createdAt": "2025-10-03T17:39:50.968Z",
+    "updatedAt": "2025-10-03T17:39:55.362Z",
+    "cancellationReason": ""
+  },
+  {
+    "id": "065019ef-0225-4ba3-850d-c578cdea441f",
+    "currency": "CNY",
+    "amount": 100,
+    "fromBankId": "bank_001",
+    "toBankId": "bank_006",
+    "route": [
+      "bank_001",
+      "bank_003",
+      "bank_005",
+      "bank_006"
+    ],
+    "currentStep": 0,
+    "status": "pending",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国银行",
+        "expectedAmount": 76.7,
+        "actualAmount": null,
+        "transferFee": 15.2,
+        "arrivalFee": 8.1,
+        "totalStepFee": 23.299999999999997,
+        "expectedDuration": "2-3小时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      },
+      {
+        "step": 2,
+        "fromBank": "中国银行",
+        "toBank": "支付宝",
+        "expectedAmount": 61.550000000000004,
+        "actualAmount": null,
+        "transferFee": 10.1,
+        "arrivalFee": 5.05,
+        "totalStepFee": 15.149999999999999,
+        "expectedDuration": "2-3小时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      },
+      {
+        "step": 3,
+        "fromBank": "支付宝",
+        "toBank": "微信",
+        "expectedAmount": 61.400000000000006,
+        "actualAmount": null,
+        "transferFee": 0.1,
+        "arrivalFee": 0.05,
+        "totalStepFee": 0.15000000000000002,
+        "expectedDuration": "实时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      }
+    ],
+    "totalFees": 38.599999999999994,
+    "netAmount": 61.400000000000006,
+    "createdAt": "2025-10-03T17:49:51.567Z",
+    "updatedAt": "2025-10-03T17:49:51.567Z",
+    "cancellationReason": ""
+  }
+]

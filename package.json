@@ -1,0 +1,27 @@
+{
+  "name": "bank-transfer-tracker",
+  "version": "1.0.0",
+  "description": "银行转账追踪系统",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "node test_transfer_flow.js",
+    "test:direct": "node -e \"require('./test_transfer_flow.js').testDirectTransfer().catch(console.error)\"",
+    "test:multi": "node -e \"require('./test_transfer_flow.js').testMultiStepTransfer().catch(console.error)\"",
+    "test:cancel": "node -e \"require('./test_transfer_flow.js').testCancelTransfer().catch(console.error)\"",
+    "test:amount": "node -e \"require('./test_transfer_flow.js').testAmountMismatch().catch(console.error)\"",
+    "test:list": "node -e \"require('./test_transfer_flow.js').displayAllTasks().catch(console.error)\""
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["bank", "transfer", "tracker"],
+  "author": "Bank Transfer System",
+  "license": "MIT"
+}
