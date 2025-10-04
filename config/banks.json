@@ -9,12 +9,14 @@
     "reachableBanks": [
       {
         "bankId": "bank_002",
+        "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "1-2小时"
       },
       {
         "bankId": "bank_003", 
+        "channel": "SWIFT",
         "transferFee": {"fixed": 15, "percentage": 0.002},
         "arrivalFee": {"fixed": 8, "percentage": 0.001},
         "expectedDuration": "2-3小时"
@@ -31,12 +33,14 @@
     "reachableBanks": [
       {
         "bankId": "bank_003",
+        "channel": "SWIFT",
         "transferFee": {"fixed": 8, "percentage": 0.001},
         "arrivalFee": {"fixed": 4, "percentage": 0.0005},
         "expectedDuration": "1-2小时"
       },
       {
         "bankId": "bank_004",
+        "channel": "SWIFT",
         "transferFee": {"fixed": 12, "percentage": 0.0015},
         "arrivalFee": {"fixed": 6, "percentage": 0.0008},
         "expectedDuration": "3-4小时"
@@ -53,12 +57,14 @@
     "reachableBanks": [
       {
         "bankId": "bank_004",
+        "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "2-3小时"
       },
       {
         "bankId": "bank_005",
+        "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "2-3小时"
@@ -84,18 +90,21 @@
     "reachableBanks": [
       {
         "bankId": "bank_001",
+        "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
         "expectedDuration": "实时"
       },
       {
         "bankId": "bank_002",
+        "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
         "expectedDuration": "实时"
       },
       {
         "bankId": "bank_006",
+        "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
         "expectedDuration": "实时"
@@ -112,12 +121,14 @@
     "reachableBanks": [
       {
         "bankId": "bank_005",
+        "channel": "第三方支付",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "2-3小时"
       },
       {
         "bankId": "bank_002",
+        "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
         "expectedDuration": "实时"
