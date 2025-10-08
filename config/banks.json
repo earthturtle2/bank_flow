@@ -1,6 +1,6 @@
-[
-  {
-    "id": "bank_001",
+{
+  "中国工商银行": {
+    "id": 1,
     "name": "中国工商银行",
     "type": "commercial",
     "isThirdParty": false,
@@ -8,14 +8,16 @@
     "currencies": ["CNY", "USD"],
     "reachableBanks": [
       {
-        "bankId": "bank_002",
+        "bankId": 2,
+        "bankName": "中国建设银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "1-2小时"
       },
       {
-        "bankId": "bank_003", 
+        "bankId": 3,
+        "bankName": "中国银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 15, "percentage": 0.002},
         "arrivalFee": {"fixed": 8, "percentage": 0.001},
@@ -23,8 +25,8 @@
       }
     ]
   },
-  {
-    "id": "bank_002",
+  "中国建设银行": {
+    "id": 2,
     "name": "中国建设银行",
     "type": "commercial",
     "isThirdParty": false,
@@ -32,14 +34,16 @@
     "currencies": ["CNY", "USD", "EUR"],
     "reachableBanks": [
       {
-        "bankId": "bank_003",
+        "bankId": 3,
+        "bankName": "中国银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 8, "percentage": 0.001},
         "arrivalFee": {"fixed": 4, "percentage": 0.0005},
         "expectedDuration": "1-2小时"
       },
       {
-        "bankId": "bank_004",
+        "bankId": 4,
+        "bankName": "招商银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 12, "percentage": 0.0015},
         "arrivalFee": {"fixed": 6, "percentage": 0.0008},
@@ -47,23 +51,25 @@
       }
     ]
   },
-  {
-    "id": "bank_003",
+  "中国银行": {
+    "id": 3,
     "name": "中国银行",
-    "type": "commercial", 
+    "type": "commercial",
     "isThirdParty": false,
     "dailyLimit": 1200000,
     "currencies": ["CNY", "USD", "EUR", "GBP"],
     "reachableBanks": [
       {
-        "bankId": "bank_004",
+        "bankId": 4,
+        "bankName": "招商银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "2-3小时"
       },
       {
-        "bankId": "bank_005",
+        "bankId": 5,
+        "bankName": "支付宝",
         "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
@@ -71,8 +77,8 @@
       }
     ]
   },
-  {
-    "id": "bank_004",
+  "招商银行": {
+    "id": 4,
     "name": "招商银行",
     "type": "commercial",
     "isThirdParty": false,
@@ -80,8 +86,8 @@
     "currencies": ["CNY", "USD"],
     "reachableBanks": []
   },
-  {
-    "id": "bank_005",
+  "支付宝": {
+    "id": 5,
     "name": "支付宝",
     "type": "third_party",
     "isThirdParty": true,
@@ -89,21 +95,24 @@
     "currencies": ["CNY"],
     "reachableBanks": [
       {
-        "bankId": "bank_001",
+        "bankId": 1,
+        "bankName": "中国工商银行",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
         "expectedDuration": "实时"
       },
       {
-        "bankId": "bank_002",
+        "bankId": 2,
+        "bankName": "中国建设银行",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
         "expectedDuration": "实时"
       },
       {
-        "bankId": "bank_006",
+        "bankId": 6,
+        "bankName": "微信",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
@@ -111,8 +120,8 @@
       }
     ]
   },
-  {
-    "id": "bank_006",
+  "微信": {
+    "id": 6,
     "name": "微信",
     "type": "third_party",
     "isThirdParty": true,
@@ -120,14 +129,16 @@
     "currencies": ["CNY"],
     "reachableBanks": [
       {
-        "bankId": "bank_005",
+        "bankId": 5,
+        "bankName": "支付宝",
         "channel": "第三方支付",
         "transferFee": {"fixed": 10, "percentage": 0.001},
         "arrivalFee": {"fixed": 5, "percentage": 0.0005},
         "expectedDuration": "2-3小时"
       },
       {
-        "bankId": "bank_002",
+        "bankId": 2,
+        "bankName": "中国建设银行",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
         "arrivalFee": {"fixed": 0, "percentage": 0.0005},
@@ -135,4 +146,4 @@
       }
     ]
   }
-]
+}
