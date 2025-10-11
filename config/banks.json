@@ -8,7 +8,7 @@
     "currencies": ["CNY", "USD"],
     "reachableBanks": [
       {
-        "bankId": 2,
+        "id": 2,
         "bankName": "中国建设银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
@@ -16,7 +16,7 @@
         "expectedDuration": "1-2小时"
       },
       {
-        "bankId": 3,
+        "id": 3,
         "bankName": "中国银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 15, "percentage": 0.002},
@@ -34,7 +34,7 @@
     "currencies": ["CNY", "USD", "EUR"],
     "reachableBanks": [
       {
-        "bankId": 3,
+        "id": 3,
         "bankName": "中国银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 8, "percentage": 0.001},
@@ -42,7 +42,7 @@
         "expectedDuration": "1-2小时"
       },
       {
-        "bankId": 4,
+        "id": 4,
         "bankName": "招商银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 12, "percentage": 0.0015},
@@ -60,7 +60,7 @@
     "currencies": ["CNY", "USD", "EUR", "GBP"],
     "reachableBanks": [
       {
-        "bankId": 4,
+        "id": 4,
         "bankName": "招商银行",
         "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
@@ -68,7 +68,7 @@
         "expectedDuration": "2-3小时"
       },
       {
-        "bankId": 5,
+        "id": 5,
         "bankName": "支付宝",
         "channel": "SWIFT",
         "transferFee": {"fixed": 10, "percentage": 0.001},
@@ -95,7 +95,7 @@
     "currencies": ["CNY"],
     "reachableBanks": [
       {
-        "bankId": 1,
+        "id": 1,
         "bankName": "中国工商银行",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
@@ -103,7 +103,7 @@
         "expectedDuration": "实时"
       },
       {
-        "bankId": 2,
+        "id": 2,
         "bankName": "中国建设银行",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
@@ -111,7 +111,7 @@
         "expectedDuration": "实时"
       },
       {
-        "bankId": 6,
+        "id": 6,
         "bankName": "微信",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},
@@ -129,7 +129,7 @@
     "currencies": ["CNY"],
     "reachableBanks": [
       {
-        "bankId": 5,
+        "id": 5,
         "bankName": "支付宝",
         "channel": "第三方支付",
         "transferFee": {"fixed": 10, "percentage": 0.001},
@@ -137,7 +137,7 @@
         "expectedDuration": "2-3小时"
       },
       {
-        "bankId": 2,
+        "id": 2,
         "bankName": "中国建设银行",
         "channel": "第三方支付",
         "transferFee": {"fixed": 0, "percentage": 0.001},

@@ -8,10 +8,14 @@ class RoutePlanner {
     const routes = [];
     const visited = new Set();
     
+    // 将字符串ID转换为数字进行比较
+    const fromId = parseInt(fromBankId);
+    const toId = parseInt(toBankId);
+    
     const dfs = (currentBankId, path, totalFees, totalDuration) => {
       if (path.length > maxSteps) return;
       
-      if (currentBankId === toBankId) {
+      if (currentBankId === toId) {
         routes.push({
           path: [...path],
           totalFees: totalFees,
@@ -23,12 +27,12 @@ class RoutePlanner {
       
       visited.add(currentBankId);
       
-      const currentBank = this.banks.find(b => b.id === currentBankId);
+      const currentBank = Object.values(this.banks).find(b => b.id === currentBankId);
       if (!currentBank) return;
       
       for (const connection of currentBank.reachableBanks) {
-        if (!visited.has(connection.bankId)) {
-          const nextBank = this.banks.find(b => b.id === connection.bankId);
+        if (!visited.has(connection.id)) {
+          const nextBank = Object.values(this.banks).find(b => b.id === connection.id);
           if (!nextBank) continue;
           
           // 计算这一步的费用和时长
@@ -36,8 +40,8 @@ class RoutePlanner {
           const duration = this.parseDuration(connection.expectedDuration);
           
           dfs(
-            connection.bankId,
-            [...path, connection.bankId],
+            connection.id,
+            [...path, connection.id],
             totalFees + stepFees,
             totalDuration + duration
           );
@@ -47,7 +51,7 @@ class RoutePlanner {
       visited.delete(currentBankId);
     };
     
-    dfs(fromBankId, [fromBankId], 0, 0);
+    dfs(fromId, [fromId], 0, 0);
     
     // 按步骤数、费用、时长排序
     return routes.sort((a, b) => {
@@ -78,12 +82,12 @@ class RoutePlanner {
     let totalDuration = 0;
     
     for (let i = 0; i < route.length - 1; i++) {
-      const fromBank = this.banks.find(b => b.id === route[i]);
-      const toBank = this.banks.find(b => b.id === route[i + 1]);
+      const fromBank = Object.values(this.banks).find(b => b.id === route[i]);
+      const toBank = Object.values(this.banks).find(b => b.id === route[i + 1]);
       
       if (!fromBank || !toBank) continue;
       
-      const connection = fromBank.reachableBanks.find(r => r.bankId === toBank.id);
+      const connection = fromBank.reachableBanks.find(r => r.id === toBank.id);
       if (!connection) continue;
       
       const transferFee = connection.transferFee.fixed + (amount * connection.transferFee.percentage);

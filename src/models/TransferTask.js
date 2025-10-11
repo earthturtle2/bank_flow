@@ -20,12 +20,12 @@ class TransferTask {
   calculateStepFees(stepIndex, banks) {
     if (stepIndex >= this.route.length - 1) return 0;
     
-    const fromBank = banks.find(b => b.id === this.route[stepIndex]);
-    const toBank = banks.find(b => b.id === this.route[stepIndex + 1]);
+    const fromBank = Object.values(banks).find(b => b.id === this.route[stepIndex]);
+    const toBank = Object.values(banks).find(b => b.id === this.route[stepIndex + 1]);
     
     if (!fromBank || !toBank) return 0;
     
-    const connection = fromBank.reachableBanks.find(r => r.bankId === toBank.id);
+    const connection = fromBank.reachableBanks.find(r => r.id === toBank.id);
     if (!connection) return 0;
     
     const transferFee = connection.transferFee.fixed + (this.amount * connection.transferFee.percentage);

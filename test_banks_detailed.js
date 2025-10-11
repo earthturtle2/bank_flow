@@ -47,9 +47,9 @@ Object.entries(banksData).forEach(([sourceBankName, sourceBank]) => {
     if (sourceBank.reachableBanks && sourceBank.reachableBanks.length > 0) {
         sourceBank.reachableBanks.forEach(connection => {
             // 检查目标银行是否存在
-            const targetBank = Object.values(banksData).find(bank => bank.id === connection.bankId);
+            const targetBank = Object.values(banksData).find(bank => bank.id === connection.id);
             if (!targetBank) {
-                console.log(`   ❌ ${sourceBankName} -> ID ${connection.bankId}: 目标银行不存在`);
+                console.log(`   ❌ ${sourceBankName} -> ID ${connection.id}: 目标银行不存在`);
                 allConnectionsValid = false;
             } else if (targetBank.name !== connection.bankName) {
                 console.log(`   ❌ ${sourceBankName} -> ${targetBank.name}: 银行名称不一致`);

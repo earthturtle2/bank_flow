@@ -11,8 +11,9 @@ class TransferService {
   // 创建新的转账任务
   async createTransferTask(currency, amount, fromBankId, toBankId, selectedRoute) {
     // 验证银行和币种
-    const fromBank = this.banks.find(b => b.id === fromBankId);
-    const toBank = this.banks.find(b => b.id === toBankId);
+    // 注意：前端传递的bankId是字符串，需要转换为数字进行比较
+    const fromBank = Object.values(this.banks).find(b => b.id === parseInt(fromBankId));
+    const toBank = Object.values(this.banks).find(b => b.id === parseInt(toBankId));
     
     if (!fromBank || !toBank) {
       throw new Error('银行不存在');
@@ -194,6 +195,23 @@ class TransferService {
 
   // 获取所有可能的路线
   async getAvailableRoutes(currency, amount, fromBankId, toBankId) {
+    // 验证银行是否支持指定货币
+    // 注意：前端传递的bankId是字符串，需要转换为数字进行比较
+    const fromBank = Object.values(this.banks).find(b => b.id === parseInt(fromBankId));
+    const toBank = Object.values(this.banks).find(b => b.id === parseInt(toBankId));
+    
+    if (!fromBank || !toBank) {
+      throw new Error('银行不存在');
+    }
+    
+    if (!fromBank.currencies.includes(currency)) {
+      throw new Error(`发款银行 ${fromBank.name} 不支持货币 ${currency}`);
+    }
+    
+    if (!toBank.currencies.includes(currency)) {
+      throw new Error(`收款银行 ${toBank.name} 不支持货币 ${currency}`);
+    }
+    
     const routes = this.routePlanner.findAllRoutes(fromBankId, toBankId);
     
     return routes.map(route => {
@@ -218,9 +236,17 @@ class TransferService {
     
     // 补充银行信息
     const enrichedTask = { ...task };
-    enrichedTask.fromBank = this.banks.find(b => b.id === task.fromBankId);
-    enrichedTask.toBank = this.banks.find(b => b.id === task.toBankId);
-    enrichedTask.routeBanks = task.route.map(bankId => this.banks.find(b => b.id === bankId));
+    // 将bank_001格式的ID转换为数字ID
+    const fromBankId = task.fromBankId.startsWith('bank_') ? parseInt(task.fromBankId.replace('bank_', '')) : parseInt(task.fromBankId);
+    const toBankId = task.toBankId.startsWith('bank_') ? parseInt(task.toBankId.replace('bank_', '')) : parseInt(task.toBankId);
+    enrichedTask.fromBank = Object.values(this.banks).find(b => b.id === fromBankId);
+    enrichedTask.toBank = Object.values(this.banks).find(b => b.id === toBankId);
+    enrichedTask.routeBanks = task.route.map(bankId => {
+      // 处理bankId可能是字符串或数字的情况
+      const bankIdStr = String(bankId);
+      const bankIdNum = bankIdStr.startsWith('bank_') ? parseInt(bankIdStr.replace('bank_', '')) : parseInt(bankIdStr);
+      return Object.values(this.banks).find(b => b.id === bankIdNum);
+    });
     
     return enrichedTask;
   }

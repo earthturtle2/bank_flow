@@ -246,5 +246,164 @@
     "createdAt": "2025-10-03T17:49:51.567Z",
     "updatedAt": "2025-10-03T17:49:51.567Z",
     "cancellationReason": ""
+  },
+  {
+    "id": "188e8193-2a51-4aab-b8c8-18c09e180942",
+    "currency": "USD",
+    "amount": 100,
+    "fromBankId": "1",
+    "toBankId": "3",
+    "route": [
+      1,
+      2,
+      3
+    ],
+    "currentStep": 0,
+    "status": "pending",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国建设银行",
+        "expectedAmount": 84.85,
+        "actualAmount": null,
+        "transferFee": 10.1,
+        "arrivalFee": 5.05,
+        "totalStepFee": 15.149999999999999,
+        "expectedDuration": "1-2小时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      },
+      {
+        "step": 2,
+        "fromBank": "中国建设银行",
+        "toBank": "中国银行",
+        "expectedAmount": 72.7,
+        "actualAmount": null,
+        "transferFee": 8.1,
+        "arrivalFee": 4.05,
+        "totalStepFee": 12.149999999999999,
+        "expectedDuration": "1-2小时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      }
+    ],
+    "totalFees": 27.299999999999997,
+    "netAmount": 72.7,
+    "createdAt": "2025-10-11T09:56:52.677Z",
+    "updatedAt": "2025-10-11T09:56:52.677Z",
+    "cancellationReason": ""
+  },
+  {
+    "id": "e78e15b7-0094-4872-abb8-d679e2724000",
+    "currency": "USD",
+    "amount": 100,
+    "fromBankId": "1",
+    "toBankId": "3",
+    "route": [
+      1,
+      2,
+      3
+    ],
+    "currentStep": 0,
+    "status": "pending",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国建设银行",
+        "expectedAmount": 84.85,
+        "actualAmount": null,
+        "transferFee": 10.1,
+        "arrivalFee": 5.05,
+        "totalStepFee": 15.149999999999999,
+        "expectedDuration": "1-2小时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      },
+      {
+        "step": 2,
+        "fromBank": "中国建设银行",
+        "toBank": "中国银行",
+        "expectedAmount": 72.7,
+        "actualAmount": null,
+        "transferFee": 8.1,
+        "arrivalFee": 4.05,
+        "totalStepFee": 12.149999999999999,
+        "expectedDuration": "1-2小时",
+        "status": "pending",
+        "arrivalConfirmed": false,
+        "amountMismatchReason": "",
+        "sentAt": null,
+        "confirmedAt": null
+      }
+    ],
+    "totalFees": 27.299999999999997,
+    "netAmount": 72.7,
+    "createdAt": "2025-10-11T09:59:14.278Z",
+    "updatedAt": "2025-10-11T09:59:14.278Z",
+    "cancellationReason": ""
+  },
+  {
+    "id": "974b2a51-45d8-4b53-9127-5f594071db1d",
+    "currency": "USD",
+    "amount": 100,
+    "fromBankId": "1",
+    "toBankId": "3",
+    "route": [
+      1,
+      2,
+      3
+    ],
+    "currentStep": 1,
+    "status": "completed",
+    "steps": [
+      {
+        "step": 1,
+        "fromBank": "中国工商银行",
+        "toBank": "中国建设银行",
+        "expectedAmount": 84.85,
+        "actualAmount": 84.85,
+        "transferFee": 10.1,
+        "arrivalFee": 5.05,
+        "totalStepFee": 15.149999999999999,
+        "expectedDuration": "1-2小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-11T10:58:14.606Z",
+        "confirmedAt": "2025-10-11T10:58:17.151Z"
+      },
+      {
+        "step": 2,
+        "fromBank": "中国建设银行",
+        "toBank": "中国银行",
+        "expectedAmount": 72.69999999999999,
+        "actualAmount": 72.69999999999999,
+        "transferFee": 8.1,
+        "arrivalFee": 4.05,
+        "totalStepFee": 12.149999999999999,
+        "expectedDuration": "1-2小时",
+        "status": "sent",
+        "arrivalConfirmed": true,
+        "amountMismatchReason": "",
+        "sentAt": "2025-10-11T10:58:18.260Z",
+        "confirmedAt": "2025-10-11T10:58:20.498Z"
+      }
+    ],
+    "totalFees": 27.299999999999997,
+    "netAmount": 72.7,
+    "createdAt": "2025-10-11T10:56:27.806Z",
+    "updatedAt": "2025-10-11T10:58:20.498Z",
+    "cancellationReason": ""
   }
 ]

@@ -95,8 +95,11 @@ router.get('/tasks', async (req, res) => {
     // 补充银行信息
     const enrichedTasks = tasks.map(task => {
       const enriched = { ...task };
-      enriched.fromBank = banks.find(b => b.id === task.fromBankId);
-      enriched.toBank = banks.find(b => b.id === task.toBankId);
+      // 补充银行信息 - 将bank_001格式的ID转换为数字ID
+      const fromBankId = task.fromBankId.startsWith('bank_') ? parseInt(task.fromBankId.replace('bank_', '')) : parseInt(task.fromBankId);
+      const toBankId = task.toBankId.startsWith('bank_') ? parseInt(task.toBankId.replace('bank_', '')) : parseInt(task.toBankId);
+      enriched.fromBank = Object.values(banks).find(b => b.id === fromBankId);
+      enriched.toBank = Object.values(banks).find(b => b.id === toBankId);
       return enriched;
     });
     

@@ -78,8 +78,9 @@ function populateBankSelects() {
         toBankSelect.removeChild(toBankSelect.lastChild);
     }
     
-    // 添加银行选项
-    banks.forEach(bank => {
+    // 添加银行选项 - 现在banks是对象格式，需要转换为数组
+    const bankArray = Object.values(banks);
+    bankArray.forEach(bank => {
         const option1 = document.createElement('option');
         option1.value = bank.id;
         option1.textContent = bank.name;
@@ -170,7 +171,7 @@ function displayRoutes(routes) {
 // 获取路线路径名称
 function getRoutePathNames(path) {
     return path.map(bankId => {
-        const bank = banks.find(b => b.id === bankId);
+        const bank = Object.values(banks).find(b => b.id === bankId);
         return bank ? bank.name : bankId;
     }).join(' → ');
 }
@@ -275,7 +276,7 @@ async function loadTasks() {
                     <div style="margin-top: 1rem; border-top: 1px solid #eee; padding-top: 1rem;">
                         <p><strong>各步骤金额:</strong></p>
                         ${task.steps.map((step, index) => {
-                            const bank = banks.find(b => b.id === task.route[index + 1]);
+                            const bank = Object.values(banks).find(b => b.id === task.route[index + 1]);
                             if (!bank) return '';
                             
                             let amountText = '';
@@ -365,7 +366,7 @@ function displayTaskDetails(task) {
             <!-- 步骤进度 -->
             <div class="step-progress">
                 ${task.route.map((bankId, index) => {
-                    const bank = banks.find(b => b.id === bankId);
+                    const bank = Object.values(banks).find(b => b.id === bankId);
                     const step = task.steps[index - 1]; // 步骤索引比银行路由索引小1
                     
                     // 判断步骤状态
@@ -435,12 +436,12 @@ function displayTaskDetails(task) {
                         <input type="number" id="actualAmount" class="form-control" value="${task.steps[task.currentStep].expectedAmount}" step="0.01">
                         <label for="amountReason">金额不一致原因（可选）</label>
                         <input type="text" id="amountReason" class="form-control" placeholder="如金额不一致，请说明原因">
-                        <button class="btn btn-blue" onclick="confirmArrival()" style="margin-top: 1rem;">确认${banks.find(b => b.id === task.route[task.currentStep + 1]) ? banks.find(b => b.id === task.route[task.currentStep + 1]).name : '目标银行'}到账</button>
+                        <button class="btn btn-blue" onclick="confirmArrival()" style="margin-top: 1rem;">确认${Object.values(banks).find(b => b.id === task.route[task.currentStep + 1]) ? Object.values(banks).find(b => b.id === task.route[task.currentStep + 1]).name : '目标银行'}到账</button>
                     </div>
                 ` : ''}
                 
                 ${task.status === 'processing' && task.currentStep < task.steps.length - 1 && task.steps[task.currentStep] && task.steps[task.currentStep].arrivalConfirmed ? `
-                    <button class="btn btn-red" onclick="sendNextStep()">从${banks.find(b => b.id === task.route[task.currentStep + 1]) ? banks.find(b => b.id === task.route[task.currentStep + 1]).name : '当前银行'}发送</button>
+                    <button class="btn btn-red" onclick="sendNextStep()">从${Object.values(banks).find(b => b.id === task.route[task.currentStep + 1]) ? Object.values(banks).find(b => b.id === task.route[task.currentStep + 1]).name : '当前银行'}发送</button>
                 ` : ''}
                 
                 ${task.status === 'processing' || task.status === 'pending' ? `

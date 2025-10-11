@@ -39,8 +39,8 @@ bankNames.forEach(bankName => {
         console.log(`   ${bankName} 的可到达银行:`);
         bank.reachableBanks.forEach(reachableBank => {
             const hasBankName = reachableBank.bankName && typeof reachableBank.bankName === 'string';
-            const hasBankId = typeof reachableBank.bankId === 'number';
-            console.log(`     - 目标银行: ${reachableBank.bankName || '未知'}, ID: ${reachableBank.bankId}, ${hasBankName && hasBankId ? '✅' : '❌'}`);
+            const hasBankId = typeof reachableBank.id === 'number';
+            console.log(`     - 目标银行: ${reachableBank.bankName || '未知'}, ID: ${reachableBank.id}, ${hasBankName && hasBankId ? '✅' : '❌'}`);
             if (!hasBankName || !hasBankId) allReachableBanksValid = false;
         });
     } else {
@@ -64,10 +64,10 @@ bankNames.forEach(bankName => {
     if (bank.reachableBanks) {
         bank.reachableBanks.forEach(reachableBank => {
             const targetBankName = Object.keys(banksData).find(name => 
-                banksData[name].id === reachableBank.bankId
+                banksData[name].id === reachableBank.id
             );
             if (!targetBankName) {
-                console.log(`   ❌ ${bankName}: 可到达银行 ID ${reachableBank.bankId} 不存在`);
+                console.log(`   ❌ ${bankName}: 可到达银行 ID ${reachableBank.id} 不存在`);
                 consistencyValid = false;
             } else if (targetBankName !== reachableBank.bankName) {
                 console.log(`   ❌ ${bankName}: 可到达银行名称不一致，配置中为 "${reachableBank.bankName}"，实际应为 "${targetBankName}"`);
